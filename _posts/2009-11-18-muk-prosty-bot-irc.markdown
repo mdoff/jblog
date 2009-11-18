@@ -18,4 +18,4 @@ Powstał na potrzeby kanału \#informatykaug w sieci [ircnet.pl](http://ircnet.p
 * !bash -- pobiera i wyświetla losowy cyctat z [bahsa](http://bash.org.pl) niestety przez ograniczenia irca ta funkcja nie jest zbyt użyteczna
 * !8b <własne pytanie> -- odpowiada na pytania ;) działa na takiej samej zasadzie jak [Magic 8 Ball](http://en.wikipedia.org/wiki/Magic_8-Ball)
 
-Dodatkowo [Muk](http://github.com/mdoff/muk) loguje aktywność na kanale, logi są dostępne pod [tym adresem]("http://mdoff.net/muk/")
+Dodatkowo [Muk](http://github.com/mdoff/muk) loguje aktywność na kanale, logi są dostępne pod [tym adresem]("http://mdoff.net/muk/") oraz potrafi skracać linki, które padają w rozmowie za pomocą serwisu [mrte.ch](http://mrte.ch/).

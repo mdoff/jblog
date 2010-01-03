@@ -1,29 +1,143 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl-pl">
 <head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
-   <meta name="author" content="Tomasz Lewinski" />
-   <link href="http://inf.ug.edu.pl/~tlewinski/atom.xml" rel="alternate" 
-         title="Tomasz Lewiński" type="application/atom+xml" />
-
-   <link rel="stylesheet" href="../../../../css/syntax.css" type="text/css" />
-   <link rel="stylesheet" href="../../../../css/screen.css" type="text/css" media="screen, projection" />
-   <link rel="stylesheet" href="../../../../css/blog.css" type="text/css" media="screen, projection" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="description" content=""/>
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<link rel="stylesheet" type="text/css" href="../../../../style.css" media="screen" />
+	<title>{{ page.title }}</title>
+	<meta name="author" content="Tomasz Lewiński" />
+	 <link href="http://inf.ug.edu.pl/~tlewinski/sp/atom.xml" rel="alternate" 
+               title="Tomasz Lewiński" type="application/atom+xml" />
 </head>
-<body>
 
-<div class="site span-21"><!--  showgrid -->
+<body id="top">
 
-  <div class="title span-21">
-    <img class="prepend-1" src="../../../../images/logo.png" alt="[logo]" />
-    <a class="append-7" href="/~tlewinski/">home page</a>
-  </div>
-  
-  {{ content }}
+<div id="layout_wrapper_outer">
+<div id="layout_wrapper">
 
+	<div id="layout_top">
+		
+		<div id="site_title">
+			<h1><a href="#">Tomasz <span>Lewiński</span></a></h1>
+			<h2>jBlog</h2>
+		</div>
+
+	</div>
+
+	<div id="layout_body_outer">
+	<div id="layout_body">
+
+		<div id="navigation">
+
+			<div id="nav1">
+
+				<ul>
+					<li><a href="http://sigma.inf.ug.edu.pl/~tlewinski/sp/">Home</a></li>
+					<li><a href="http://mdoff.net">Home page</a></li>
+					<li><a href="http://blog.mdoff.net">Inny blog</a></li>
+				</ul>
+
+				<div class="clearer">&nbsp;</div>
+
+			</div>
+
+
+
+		</div>
+
+		<div id="main">
+
+			<div class="left" id="content_outer">
+				<div id="content">
+					
+
+					<div class="post">
+
+						
+
+						
+						<div class="post_body">
+						
+						<p>
+						{{ content }}
+						</p>
+
+						</div>
+						
+						
+
+					</div>	
+
+				</div>
+			</div>
+
+			<div class="right" id="sidebar_outer">
+				<div id="sidebar">
+
+					<div class="box">
+
+						<div class="box_title">O blogu</div>
+
+						<div class="box_content">
+						  <p>Blog powstał jako fork jBloga do prowadzenia notatek z przedmiotu Środowisko Programisty</p>
+						</div>
+
+					</div>
+
+					<div class="box">
+
+						<div class="box_title">Linki</div>
+
+						<div class="box_content">
+							<ul>
+
+							  <li><a href="http://github.com/wbzyl/jblog/">jBlog</a></li>
+							  <li><a href="http://github.com">Github</a></li>
+							  <li><a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
+							  <li><a href="http://sinatra.inf.ug.edu.pl/sp/">2dc87f…</a></li>
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="box">
+
+					
+
+					</div>
+
+					<div class="box">
+
+						
+
+					</div>
+
+				</div>
+			</div>
+
+			<div class="clearer">&nbsp;</div>
+
+		</div>
+
+
+
+	</div>
+	</div>
+
+	<div id="footer">
+
+		<div class="left">
+			&copy; 2009 mdoff.net 
+		</div>
+				
+		<div class="clearer">&nbsp;</div>
+
+	</div>
+
+</div>
 </div>
 
 </body>

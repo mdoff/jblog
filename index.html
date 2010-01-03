@@ -1,28 +1,150 @@
 ---
-layout: index
 title: TL_Blog
 ---
 
-<div id="home" class="prepend-1 span-13">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 
-  <blockquote>
-    <p>
-    Ciekawość jest najpotężniejszą siłą napędową w kosmosie, ponieważ 
-jest w stanie pokonać dwie największe siły hamujące: rozsądek i strach.   
-    </p>
-    <p class="author">- Walter Moers</p>
-  </blockquote>
-  
-  <h1>Posty</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="description" content=""/>
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<title>{{ page.title }}</title>
+	<meta name="author" content="Tomasz Lewiński" />
+	 <link href="http://inf.ug.edu.pl/~tlewinski/sp/atom.xml" rel="alternate" 
+               title="Tomasz Lewiński" type="application/atom+xml" />
+</head>
+
+<body id="top">
+
+<div id="layout_wrapper_outer">
+<div id="layout_wrapper">
+
+	<div id="layout_top">
+		
+		<div id="site_title">
+			<h1><a href="#">Tomasz <span>Lewiński</span></a></h1>
+			<h2>jBlog</h2>
+		</div>
+
+	</div>
+
+	<div id="layout_body_outer">
+	<div id="layout_body">
+
+		<div id="navigation">
+
+			<div id="nav1">
+
+			<ul>
+					<li><a href="http://sigma.inf.ug.edu.pl/~tlewinski/sp/">Home</a></li>
+					<li><a href="http://mdoff.net">Home page</a></li>
+					<li><a href="http://blog.mdoff.net">Inny blog</a></li>
+				</ul>
+
+				<div class="clearer">&nbsp;</div>
+
+			</div>
+
+
+
+		</div>
+
+		<div id="main">
+
+			<div class="left" id="content_outer">
+				<div id="content">
+					
+
+					<div class="post">
+
+						<div class="post_title"><h2><a href="#">Posty</a></h2></div>
+
+						
+						<div class="post_body">
+						
+						<p>
+						 {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
-  </ul>
-  
-  <h1>Projekty Open Source</h1>
-  <ul class="posts">
-    <li><a href="http://github.com/wbzyl/jblog/">jBlog</a> — szablon jekyll-bloga</li>
-  </ul>
+						</p>
+
+						</div>
+						
+						
+
+					</div>	
+
+				</div>
+			</div>
+
+			<div class="right" id="sidebar_outer">
+				<div id="sidebar">
+
+					<div class="box">
+
+						<div class="box_title">O blogu</div>
+
+						<div class="box_content">
+						  <p>Blog powstał jako fork jBloga do prowadzenia notatek z przedmiotu Środowisko Programisty</p>
+						</div>
+
+					</div>
+
+					<div class="box">
+
+						<div class="box_title">Linki</div>
+
+						<div class="box_content">
+							<ul>
+								<li><a href="http://github.com/wbzyl/jblog/">jBlog</a></li>
+								<li><a href="http://github.com">Github</a></li>
+								<li><a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
+								<li><a href="http://sinatra.inf.ug.edu.pl/sp/">2dc87f…</a></li>
+								
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="box">
+
+					
+
+					</div>
+
+					<div class="box">
+
+						
+
+					</div>
+
+				</div>
+			</div>
+
+			<div class="clearer">&nbsp;</div>
+
+		</div>
+
+
+
+	</div>
+	</div>
+
+	<div id="footer">
+
+		<div class="left">
+			&copy; 2009 mdoff.net 
+		</div>
+				
+		<div class="clearer">&nbsp;</div>
+
+	</div>
 
 </div>
+</div>
+
+</body>
+</html>

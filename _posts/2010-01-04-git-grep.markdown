@@ -4,7 +4,7 @@ title: Git grep (próba)
 ---
 # {{ page.title }}
 
-<pre>
+
 {% highlight bash %}
 git log -p --pretty=raw | grep -n <funkcja> |head -n 1
 
@@ -12,4 +12,3 @@ git log -p --pretty=raw | grep -n <funkcja> |head -n 1
 <br />
 Podaje numer linii w której poraz pierwszy pojawia się nazwa funkcji, pozostaje jeszcze jakoś wydobyć resztę, ale nie chce mi się myśleć teraz ;p
 
-</pre>

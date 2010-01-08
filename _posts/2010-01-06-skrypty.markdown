@@ -1,0 +1,40 @@
+---
+layout: post
+title: Skrypty
+---
+
+# {{ page.title }}
+
+##Poprawiona wersja skryptu makedict.sh
+
+{% highlight bash %}
+#!/bin/bash
+
+E_BADARGS=64
+if [ ! -r "$1" ]                    #  Need at least one
+then                                #  valid file argument.
+  echo "Usage: $0 files-to-process"
+  exit $E_BADARGS
+fi  
+cat $* |                            # Contents of specified files to stdout.
+        tr A-Z a-z |                # Convert to lowercase.
+#	tr Ą ą | #jeśli ta linijka jest odkomentowana to zamienia ń na odwrócone Ń
+	tr Ć ć |
+	tr Ę ę |
+	tr Ń ń |
+	tr Ó ó |
+	tr Ź ź |
+	tr Ś ś |
+	tr Ż ż |
+        tr ' ' '\012' |             # New: change spaces to newlines.
+        tr -c '\012a-ż'  '\012' |   # Rather than deleting non-alpha chars,
+
+        sort |                      # 
+        uniq |                      # Remove duplicates.
+        grep -v '^#' |              # Delete lines beginning with a hashmark.
+        grep -v '^$'                # Delete blank lines.
+
+exit 0
+{% endhighlight %}
+
+Skrypt najpierw zamienia wszystkie wielkie litery na małe następnie zmienia spacje na nowe linie i usuwa wszystkie znaki nie będące literami tj. kropki przecinki i inne. Potem sortuje otrzymane wyrazy, usuwa duplikaty, puste linie i linie zaczynające się od #.

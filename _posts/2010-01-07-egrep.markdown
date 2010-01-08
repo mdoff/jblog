@@ -1,0 +1,14 @@
+---
+layout: post
+title: egrep - ściąga
+---
+
+# {{ page.title }}
+<br />
+##Czym jest egrep?
+egrep jest w zasadzie poleceniem grep tyle, że wywołanym z parametrem -e oznaczającym, że będzie używał wyrażeń regularnych. 
+Wyrażenia regularne to wzorce, które opisują łańcuchy znaków. Wyrażenia regularne mogą określać zbiór pasujących łańcuchów, mogą również wyszczególniać istotne części łańcucha. 
+Są one używane też w porogramach między innymi takich jak: sed i awk oraz w języku skryptowym  Perl.
+<br />
+##Opis znaczników
+

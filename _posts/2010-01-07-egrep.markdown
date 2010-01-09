@@ -12,3 +12,48 @@ Są one używane też w porogramach między innymi takich jak: sed i awk oraz w 
 <br />
 ##Opis znaczników
 
+<table border="0.1">
+	<tr>
+		<td>Znacznik</td><td>Opis znacznika</td>
+	</tr>
+	<tr>
+		<td>^</td>
+		<td>oznacza początek wiersza np. wyrażenie ^A wyszuka wszystkie wersze zaczynjące się na A</td>
+	</tr>
+	<tr>
+		<td>$</td>
+		<td>oznacza koniec wiersza, A$ wyszuka wszystkie wiersze kończące się na A</td>
+	</tr>
+	<tr>
+		<td>\ (back slash)</td>
+		<td>odbiera specjalne znaczenie następnemu znaku</td>
+	</tr>
+	<tr>
+		<td>[ ]</td>
+		<td>pasuje do każdego znaku zawartego w nawiasach, można używać zakresów, np. [0-9]</td>
+	</tr>
+	<tr>
+		<td>[^ ]</td>
+		<td>pasuje do każdego znaku <b>oprócz</b> tych zawartych w nawiasach</td>
+	</tr>
+	<tr>
+		<td>.</td>
+		<td>oznacza dowolny znak</td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td>oznacza dowolną ilość powtórzeń poprzedniego znaku</td>
+	</tr>
+	<tr>
+		<td>\{x,y\}</td>
+		<td>pasuje od x do y wystąpień poprzedniego znaku/wyrażenia</td>
+	</tr>
+	<tr>
+		<td>\{x\}</td>
+		<td>pasuje dokładnie do x wystąpień znaku/wyrażenia</td>
+	</tr>
+	<tr>
+		<td>\{x,\}</td>
+		<td>oznacza x lub więcej wystąpień znaku/wyrażenia</td>
+	</tr>
+</table>

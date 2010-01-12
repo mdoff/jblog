@@ -1,0 +1,66 @@
+---
+layout: post
+title: Git-grep
+---
+
+# {{ page.title }}
+<br />
+##Jak można wyszukać commit w którym po raz pierwszy pojawiła się określona funkcja?
+###Wstęp
+Jak można to zrobić? Hmm.. może użyjemy grepa? W końcu mamy już taką ładną ściągę do wyrażeń regularnych więc czemu jej nie użyć?<br />
+Ale co jeśli znów będziemy musieli poszukać takiego commit'a? Ponowne wklepywanie wszystkich regułek albo przeszukiwanie historii w ich poszukiwaniu nie jest zbyt przyjemnym zadaniem.. Ale ale! są skrypty! Mały sprawdzianik ze skryptów jest zapowiedziany więc mała powtórka się bardzo przyda ;)<br />
+###Zaczynamy pisać
+Najpierw tworzymy plik search_commit.sh i otwieramy go w naszym ulubionym edytorze emacs, następnie piszemy:
+{% highlight bash %}
+#!/bin/bash
+{% endhighlight %}
+Za wiele to nie jest, ale już po nadaniu praw wykonania możemy uruchomić nasz skrypt! (choć nic nie robi ;) )
+Zastanówmy się co potrzebujemy na start? Oczywiście całej historii commit'ów! Dodajmy więc ich wyświetlanie.
+{% highlight bash %}
+#!/bin/bash
+git log -p --pretty=raw
+{% endhighlight %}
+Już się coś wyświetla ale jest tego za dużo! Interesuje nas tylko jedna funkcja i to w jakim commicie została dodana, prawda? Dodatkowo interesują nas tylko numery linii wystąpień tych funkcji i możemy to przecież przekierować do zmiennej :D
+{% highlight bash %}
+#!/bin/bash
+zmienna=`git log -p --pretty=raw | grep -n $1 |tail -n 1 |cut -n -f1-1 -d ":"`
+{% endhighlight %}
+Nasz skrypt znów niczego nie wyświwetla, ale to się za chwilę zmieni, musimy jeszcze w zmiennej dodać numery linii wszystkich commitów  potem to wszystko ładnie wrzucimy w pętelkę for.
+{% highlight bash %}
+#!/bin/bash
+zmienna=`git log -p --pretty=raw | grep -n $1 |tail -n 1 |cut -n -f1-1 -d ":"`
+lista=`git log -p --pretty=raw |egrep "commit " -n|tr ' :' '- '|cut -f1-1 -d ' '`
+for ele in $lista
+do
+c=`echo $ele | cut -f1-1 -d " "`
+if [ $zmienna -gt $c ]; then
+g=$c
+fi
+done
+git log -p --pretty=raw |egrep -n 'commit '|egrep "^$g"
+{% endhighlight %}
+Teraz w zmiennej $g mamy numer linii w której znajduje się interesujący commit :> jeszcze tylko drobna kosmetyka i gotowe:
+{% highlight bash %}
+#!/bin/bash
+zmienna=`git log -p --pretty=raw | grep -n $1 |tail -n 1 |cut -n -f1-1 -d ":"`
+lista=`git log -p --pretty=raw |egrep "commit " -n|tr ' :' '- '|cut -f1-1 -d ' '`
+for ele in $lista
+do
+c=`echo $ele | cut -f1-1 -d " "`
+if [ $zmienna -gt $c ]; then
+g=$c
+fi
+done
+echo "Pierwsze wystąpienie funkcji $1 znajduje się w linii $zmienna" 
+git log -p --pretty=raw |egrep -n 'commit '|egrep "^$g"|cut -f2-2 -d ":"
+{% endhighlight %}
+<br />
+Sposób użycia: wchodzimy to katalogu z interesującym nas repozytorium i wpisujemy na przykład:
+{% highlight bash %}
+search_commit.sh "ball()"
+{% endhighlight %}
+A oto możemy dostać:
+{% highlight bash %}
+Pierwsze wystąpienie funkcji ball() znajduje się w linii 407
+commit bc61587c0d2711a40917604ac631c7ab2ca054a6
+{% endhighlight %}

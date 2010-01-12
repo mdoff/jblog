@@ -6,13 +6,13 @@ title: egrep - ściąga
 # {{ page.title }}
 <br />
 ##Czym jest egrep?
-egrep jest w zasadzie poleceniem grep tyle, że wywołanym z parametrem -e oznaczającym, że będzie używał wyrażeń regularnych. 
+egrep jest w zasadzie poleceniem grep tyle, że wywołanym z parametrem -E oznaczającym, że będzie używał wyrażeń regularnych. 
 Wyrażenia regularne to wzorce, które opisują łańcuchy znaków. Wyrażenia regularne mogą określać zbiór pasujących łańcuchów, mogą również wyszczególniać istotne części łańcucha. 
 Są one używane też w porogramach między innymi takich jak: sed i awk oraz w języku skryptowym  Perl.
 <br />
 ##Opis znaczników
 
-<table border="0.1">
+<table>
 	<tr>
 		<td>Znacznik</td><td>Opis znacznika</td>
 	</tr>
@@ -56,4 +56,37 @@ Są one używane też w porogramach między innymi takich jak: sed i awk oraz w 
 		<td>\{x,\}</td>
 		<td>oznacza x lub więcej wystąpień znaku/wyrażenia</td>
 	</tr>
+</table>
+##Przykłady
+<br />
+<table>
+	<tr>
+		<td>grep '[a-zA-Z]'</td>
+		<td>dowolna linia z przynajmniej jedną literą<td>
+	</tr>
+	<tr>
+		<td>grep '[^a-zA-Z0-9]</td>
+		<td>wszystko oprócz liter i cyfr</td>
+	</tr>
+	<tr>
+		<td>grep '[0-9]\{3\}-[0-9]\{3\}-[0-9]\{3\}'</td>
+		<td>999-999-999, wyszukuje numery telefonów w takim formacie</td>
+	</tr>
+	<tr>
+		<td>grep '^.$'</td>
+		<td>linie z dokładnie jednym znakiem</td>
+	</tr>
+	<tr>
+		<td>grep '"smug"'</td>
+		<td>wyraz 'smug' z podwójnym cudzysłowiem </td>
+	</tr>
+	<tr>
+		<td>grep '"*smug"*'</td>
+		<td>wyraz 'smug' z cudzysłowiem lub bez</td>
+	</tr>
+	<tr>
+		<td>grep '^\.'</td>
+		<td>Dowolna linia zaczynająca się kropką "."</td>
+	</tr>
+
 </table>
